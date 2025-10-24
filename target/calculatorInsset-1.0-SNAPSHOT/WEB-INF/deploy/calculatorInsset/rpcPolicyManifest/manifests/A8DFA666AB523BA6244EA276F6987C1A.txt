@@ -1,0 +1,2 @@
+serviceClass: org.insset.client.service.PourcentageService
+path: BF396C0CBA02F9A29C28232AFB55052F.gwt.rpc
