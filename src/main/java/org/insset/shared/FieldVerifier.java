@@ -57,12 +57,20 @@ public class FieldVerifier {
     }
 
     public static boolean isValidRoman(String nbr) {
-        //Implement your code
-        return true;
+        String regex = "^(M{0,1})(CM|CD|D?C{0,3})" + "(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
+        if (nbr.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static boolean isValidDate(String date) {
-        //Implement your code
-        return true;
+        String regex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$";
+        if (date.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

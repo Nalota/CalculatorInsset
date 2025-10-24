@@ -28,12 +28,9 @@ import org.insset.shared.FieldVerifier;
  */
 public class CalculatorRomainPresenter extends Composite {
 
-    @UiField
-    public ResetButton boutonClearR;
+
     @UiField
     public SubmitButton boutonConvertRToA;
-    @UiField
-    public ResetButton boutonClearA;
     @UiField
     public SubmitButton boutonConvertAToR;
     @UiField
@@ -75,27 +72,15 @@ public class CalculatorRomainPresenter extends Composite {
      * Init des handler
      */
     private void initHandler() {
-        boutonClearR.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                valR.setText("");
-                errorLabelRToA.setText("");
-            }
-        });
+
         boutonConvertRToA.addClickHandler(new ClickHandler() {
             @Override
-            public void onClick(ClickEvent event) {
+            public void onClick(ClickEvent event) { 
                 convertRomanToArabe();
             }
 
         });
-        boutonClearA.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                valA.setText("");
-                errorLabelAToR.setText("");
-            }
-        });
+
         boutonConvertAToR.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent event) {
@@ -108,6 +93,10 @@ public class CalculatorRomainPresenter extends Composite {
             public void onClick(ClickEvent event) {
                 valD.setText("");
                 errorLabelD.setText("");
+                valA.setText("");
+                errorLabelAToR.setText("");
+                valR.setText("");
+                errorLabelRToA.setText("");
             }
         });
         boutonConvertD.addClickHandler(new ClickHandler() {
@@ -128,6 +117,7 @@ public class CalculatorRomainPresenter extends Composite {
             errorLabelRToA.setText("Format incorect");
             return;
         }
+        
         service.convertRomanToArabe(valR.getText(), new AsyncCallback<Integer>() {
             public void onFailure(Throwable caught) {
                 // Show the RPC error message to the user
@@ -142,7 +132,7 @@ public class CalculatorRomainPresenter extends Composite {
     }
 
     /**
-     * call server
+     * call server  
      */
     private void convertArabeToRoman() {
         Integer value = null;
@@ -176,10 +166,10 @@ public class CalculatorRomainPresenter extends Composite {
     private void convertDate() {
         //Verif
         if (!FieldVerifier.isValidDate(valD.getText())) {
-            errorLabelAToR.addStyleName("serverResponseLabelError");
-            errorLabelAToR.setText("Format incorect");
+            errorLabelD.addStyleName("serverResponseLabelError");
+            errorLabelD.setText("Format incorect");
             return;
-        }
+        }   
         //call server
         service.convertDateYears(valD.getText(), new AsyncCallback<String>() {
             public void onFailure(Throwable caught) {
@@ -192,6 +182,6 @@ public class CalculatorRomainPresenter extends Composite {
                 new DialogBoxInssetPresenter("Convertion Date", valD.getText(), result);
             }
         });
-    }
+    }   
 
 }

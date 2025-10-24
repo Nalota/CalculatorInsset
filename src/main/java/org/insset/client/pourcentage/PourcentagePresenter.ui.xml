@@ -8,11 +8,10 @@
     <div class="bs-section">
         <g:FlowPanel>
             <g:FlowPanel>
-                <g:Label>Quelle chiffre romain voulez-vous convertir en decimal</g:Label>
+                <g:Label>prix d'origine</g:Label>
             </g:FlowPanel>
             <g:FlowPanel>          
-              <g:TextBox ui:field="valR" text="Entrer une valeur"/>
-              <g:SubmitButton ui:field="boutonConvertRToA" text="Convertir"/>
+              <g:TextBox ui:field="valR" text="Entrer un prix"/>
             </g:FlowPanel>
             <g:FlowPanel>
                 <g:Label ui:field="errorLabelRToA" ></g:Label>
@@ -22,31 +21,14 @@
         <g:FlowPanel>
         </g:FlowPanel>
         <g:FlowPanel>
-            <g:FlowPanel>
-                <g:Label>Quelle décimal voulez-vous convertir en chiffre romain</g:Label>
-            </g:FlowPanel>
             <g:FlowPanel>          
-              <g:TextBox ui:field="valA" text="Entrer une valeur"/>
-              <g:SubmitButton ui:field="boutonConvertAToR" text="Convertir"/>
+              <g:TextBox ui:field="valA" text="Entrer une remise"/>
+              <g:SubmitButton ui:field="boutonConvertRToA" text="remis"/>
             </g:FlowPanel>
             <g:FlowPanel>
                 <g:Label ui:field="errorLabelAToR" ></g:Label>
             </g:FlowPanel>
-
-        </g:FlowPanel>
-        <g:FlowPanel>
             <g:FlowPanel>
-                <g:Label>Quelle date voulez-vous convertir?</g:Label>
-            </g:FlowPanel>
-            <g:FlowPanel>          
-              <g:TextBox ui:field="valD" text="Entrer une valeur"/>
-              <g:SubmitButton ui:field="boutonConvertD" text="Convertir"/>
-            </g:FlowPanel>
-            <g:FlowPanel>
-                <g:Label ui:field="errorLabelD" ></g:Label>
-            </g:FlowPanel>
-            <g:FlowPanel>
-                
                 <g:ResetButton ui:field="boutonClearD" text="Clear"/>
             </g:FlowPanel>
         </g:FlowPanel>
